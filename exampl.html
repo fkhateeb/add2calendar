@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Add2Calendar</title>
+  </head>
+  <body>
+
+    <script src="js/add2calendar.js"></script>
+    <script>
+      /*================================ Single Event
+      */
+
+      var startDate,
+        endDate;
+
+      var tmp = new Date();
+      tmp.setDate(tmp.getDate() + 7); // next 7 days
+      startDate = tmp.toString();
+
+      tmp.setDate(tmp.getDate() + 1); // next 8 days
+      endDate = tmp.toString();
+
+      var singleEventArgs = {
+        title       : 'Add2Calendar plugin event',
+        start       : startDate,
+        end         : endDate,
+        location    : 'Bangkok, Thailand',
+        description : 'Welcome everyone to simple plugin that allow you to add event to calendar easily.'
+      };
+      var singleEvent = new Add2Calendar(singleEventArgs);
+
+      singleEvent.updateAllCalendars();
+      console.log(singleEvent.getOutlookOnlineUrl());  //openOutlookOnline()
+      console.log(singleEvent.getICalUrl()); ///openICal() for opening in window
+      console.log(singleEvent.getGoogleUrl()); //openGoogle()
+      console.log(singleEvent.getYahooUrl()); //openYahoo()
+      console.log(singleEvent.getOutlookUrl()); //openOutlook()
+
+
+
+
+    </script>
+  </body>
+</html>

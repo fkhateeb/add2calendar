@@ -333,14 +333,15 @@ var Add2Calendar = function(eventData) {
       endDate =  this.formatTime(endDate).slice(0, -1);
 
       var outlookOnlineArgs = {
-        'summary'     : (this.eventData.title || ''),
-        'dtstart'     : startDate,
-        'dtend'       : endDate,
+        'subject'     : (this.eventData.title || ''),
+        'startdt'     : startDate,
+        'enddt'       : endDate,
         'location'    : (this.eventData.location || ''),
-        'description' : (this.eventData.description || '')
+        'body' : (this.eventData.description || ''),
+        'allday':'',
+        'uid':'213423421FadyKhateeb'
       };
-
-      this.outlookOnlineUrl = 'http://calendar.live.com/calendar/calendar.aspx?rru=addevent&' + this.serialize(outlookOnlineArgs);
+        this.outlookOnlineUrl = 'https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&' + this.serialize(outlookOnlineArgs);
     }
   };
 
@@ -554,7 +555,7 @@ var Add2Calendar = function(eventData) {
     this.updateYahooUrl();
 
     // disabled@01112016-1146 - cause it's not working
-    // this.updateOutlookOnlineUrl();
+     this.updateOutlookOnlineUrl();
   };
 
   this.init = function(eventData) {
