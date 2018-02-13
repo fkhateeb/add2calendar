@@ -9,7 +9,7 @@ Allow you to add event to `calendar` easier
 - [x] Single Event: Google
 - [x] Single Event: iCal
 - [x] Single Event: Outlook
-- [x] Single Event: Outlook Online (disabled since v1.1.0)
+- [x] Single Event: Outlook Online (added again)
 - [x] Single Event: Yahoo!
 - [x] Multi Event: iCal
 - [x] Multi Event: Outlook
@@ -108,6 +108,7 @@ Apologize me, if I miss something
 
 ## Important changelog
 ```
+-fix and return outlook-online function
 1.1.0
 - Remove `setLang` API (using `setOption` instead)
 - Remove outlook-online from the list
